@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* --- GLOBAL BASE STYLES --- */
+:root {
+  --background: #ffffff;
+  --foreground: #222222;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0c;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- KHMER FONT OPTIMIZATION --- */
+.font-khmer, .font-khmerHeading {
+  text-rendering: optimizeLegibility;
+  line-height: 1.6; /* Better readability for Khmer script */
+}
+
+/* --- PREMIUM SCROLLBAR (Airbnb Style) --- */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #dddddd;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #bbbbbb;
+}
+
+/* --- MATH DISPLAY OVERRIDES --- */
+/* Ensure KaTeX doesn't break mobile layouts */
+.katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.5em 0;
+  margin: 0;
+}
+
+/* --- UTILITIES --- */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
